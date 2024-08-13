@@ -1,7 +1,7 @@
 This app allows the user to search a keywords to query image albums from the [imgur api](https://api.imgur.com/). 
 
+![Simulator Screenshot - iPhone 15 - 2024-08-13 at 07 35 49](https://github.com/user-attachments/assets/ab612461-22f5-4fdb-9e12-6545d576be07) ![Simulator Screenshot - iPhone 15 - 2024-08-13 at 07 35 55](https://github.com/user-attachments/assets/65178d9a-1d9e-468d-877a-bba9608b25c4)
 
-![Simulator Screenshot - iPhone 15 - 2024-08-13 at 06 25 43](https://github.com/user-attachments/assets/0b2652cf-e23e-43bc-9511-d7c9ca07d182)   ![Simulator Screenshot - iPhone 15 - 2024-08-13 at 06 25 54](https://github.com/user-attachments/assets/e6b2c45f-e1d6-4049-8dd6-2f4e018f7f02)
 
 Upon selecting an image album, the user will be able to see all of the images for that album. The user will also be able to view these images full-screen where they can pinch/zoom.
 
@@ -20,6 +20,17 @@ To run the app, you'll need to add a `Secrets.plist` file to the root of the pro
 </dict>
 </plist>
 ```
+
+# Architecture
+
+I created the app using MVVM for  a few reasons:
+
+1. Separation of Concerns:
+MVVM distinctly separates the business logic (ViewModel) from the UI (View) and data management (Model), which makes the code easier to manage and less prone to bugs
+2. Reusability:
+The ViewModel can be reused across different views, making it easier to maintain consistency throughout the app.
+3. Reactive:
+MVVM works seamlessly with SwiftUI’s reactive nature (e.g `ObservableObject`), where the UI automatically updates in response to changes in the ViewModel’s state. This reduces the complexity of managing UI state manually
 
 # Libraries
 
