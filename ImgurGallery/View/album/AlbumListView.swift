@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+/// Displays a list of albums with search functionality.
 struct AlbumListView: View {
     @StateObject var viewModel = AlbumViewModel()
     
@@ -45,6 +46,7 @@ struct AlbumListView: View {
                         ForEach(viewModel.albums) { album in
                             ZStack {
                                 AlbumListViewRow(album: album, viewModel: viewModel)
+                                // Invisible navigation link to the album detail view.
                                 NavigationLink(destination: AlbumDetailView(album: album)) {
                                     EmptyView()
                                 }.opacity(0)

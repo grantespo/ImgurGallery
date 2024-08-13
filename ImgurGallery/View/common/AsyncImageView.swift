@@ -8,6 +8,8 @@
 import Kingfisher
 import SwiftUI
 
+/// Loads the image asynchronously with Kingfisher, display a `ProgressView` while loading,
+/// and applies optional image processing for better performance when displaying in lists.
 struct AsyncImageView: View {
     let url: String
     var cornerRadius: CGFloat = 0

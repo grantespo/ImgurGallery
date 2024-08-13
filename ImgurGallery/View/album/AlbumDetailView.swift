@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+/// A SwiftUI view that displays the details of a selected album, including its title and images.
 struct AlbumDetailView: View {
     let album: Album
         

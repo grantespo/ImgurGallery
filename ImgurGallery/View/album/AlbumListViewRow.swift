@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+/// Represents a single row in `AlbumListView`.
+/// It displays the album cover image, title, image count, and view count for a given album.
 struct AlbumListViewRow: View {
     let album: Album
     @ObservedObject var viewModel: AlbumViewModel

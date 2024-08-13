@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+/// Displays a placeholder when no image is available.
 struct NoImageView: View {
     let width: CGFloat = 100
     let height: CGFloat = 100

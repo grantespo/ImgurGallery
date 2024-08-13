@@ -8,6 +8,7 @@
 
 import SwiftUI
 
+/// used for displaying the `views` for an `Album` or `Image`
 struct ViewsStack: View {
     let views: Int
     var body: some View {

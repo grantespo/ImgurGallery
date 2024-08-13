@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+/// Allow users to input search queries. It includes a binding to the search text,
+/// a focus state to manage the keyboard visibility, and a callback to notify when typing starts or stops.
 struct SearchBarView: View {
     @Binding var text: String
     @FocusState private var isTextFieldFocused: Bool

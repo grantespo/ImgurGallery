@@ -7,12 +7,12 @@
 
 import Foundation
 
-// Root Response
-struct ImgurResponse: Decodable {
+/// Root Response for the gallery search endpoint
+struct GalleryResponse: Decodable {
     let data: [Album]
 }
 
-// Album model
+/// This model represents the data for albums
 struct Album: Decodable, Identifiable {
     let id: String
     let title: String?
@@ -22,7 +22,7 @@ struct Album: Decodable, Identifiable {
     var views: Int
 }
 
-// Image model
+/// The base model for an image.
 struct ImageData: Decodable, Identifiable {
     let id: String
     let title: String?
@@ -34,6 +34,7 @@ struct ImageData: Decodable, Identifiable {
     var views: Int
 }
 
+/// Filters out video content from a list of albums.
 func filterOutVideoContent(albums: [Album]) -> [Album] {
     return albums.map { album in
         var filteredAlbum = album
