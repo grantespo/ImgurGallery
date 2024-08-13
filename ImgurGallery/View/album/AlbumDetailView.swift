@@ -60,12 +60,4 @@ struct AlbumDetailView: View {
             BackgroundGradient()
         )
     }
-    
-    // Converts epoch time to a formatted date string
-    private func formattedDate(from epochTime: TimeInterval) -> String {
-        let date = Date(timeIntervalSince1970: epochTime)
-        let formatter = DateFormatter()
-        formatter.dateStyle = .medium
-        return formatter.string(from: date)
-    }
 }

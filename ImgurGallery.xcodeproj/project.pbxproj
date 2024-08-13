@@ -26,6 +26,7 @@
 		5F8AA3F82C6B40BC001C6B92 /* ViewsStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8AA3F72C6B40BC001C6B92 /* ViewsStack.swift */; };
 		5F8AA4022C6B5B17001C6B92 /* NetworkingClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8AA4012C6B5B16001C6B92 /* NetworkingClient.swift */; };
 		5F8AA4062C6B78C8001C6B92 /* BackgroundGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8AA4052C6B78C8001C6B92 /* BackgroundGradient.swift */; };
+		5F8AA40A2C6B80FA001C6B92 /* dateformatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8AA4092C6B80FA001C6B92 /* dateformatter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		5F8AA3F72C6B40BC001C6B92 /* ViewsStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewsStack.swift; sourceTree = "<group>"; };
 		5F8AA4012C6B5B16001C6B92 /* NetworkingClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingClient.swift; sourceTree = "<group>"; };
 		5F8AA4052C6B78C8001C6B92 /* BackgroundGradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundGradient.swift; sourceTree = "<group>"; };
+		5F8AA4092C6B80FA001C6B92 /* dateformatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dateformatter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +134,7 @@
 			children = (
 				5F8AA3DB2C6A983A001C6B92 /* secrets.swift */,
 				5F8AA3DD2C6A98B4001C6B92 /* constants.swift */,
+				5F8AA4092C6B80FA001C6B92 /* dateformatter.swift */,
 			);
 			path = utils;
 			sourceTree = "<group>";
@@ -244,6 +247,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5F8AA40A2C6B80FA001C6B92 /* dateformatter.swift in Sources */,
 				5F8AA4022C6B5B17001C6B92 /* NetworkingClient.swift in Sources */,
 				5F8AA3E32C6AA47B001C6B92 /* SearchBarView.swift in Sources */,
 				5F8AA3E02C6AA26B001C6B92 /* FullScreenImageView.swift in Sources */,
