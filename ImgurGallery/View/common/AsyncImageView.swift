@@ -10,8 +10,9 @@ import SwiftUI
 
 struct AsyncImageView: View {
     let url: String
-    let width: CGFloat = 100
-    let height: CGFloat = 100
+    var cornerRadius: CGFloat = 0
+    var width: CGFloat? = nil
+    var height: CGFloat? = nil
     var body: some View {
         KFImage(URL(string: url))
             .placeholder {
@@ -20,6 +21,7 @@ struct AsyncImageView: View {
             .resizable()
             .aspectRatio(contentMode: .fill)
             .frame(width: width, height: height)
-            .cornerRadius(8)
+            .cornerRadius(cornerRadius)
+            .clipped()
     }
 }

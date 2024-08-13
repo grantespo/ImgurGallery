@@ -12,8 +12,19 @@ struct AlbumDetailView: View {
     
     var body: some View {
         ScrollView {
-            
+            Text(album.title ?? "Album")
+                .font(.largeTitle)
+                .fontWeight(.bold)
+                .padding(.horizontal)
+                .frame(maxWidth: .infinity, alignment: .leading)
+            LazyVGrid(columns: [GridItem(.adaptive(minimum: 100))], spacing: 10) {
+                ForEach(album.images ?? [], id: \.id) { image in
+                    NavigationLink(destination: FullscreenImageView(image: image)) {
+                        AsyncImageView(url: image.link, width: 100, height: 100)
+                    }
+                }
+            }
+            .padding()
         }
-        .navigationTitle(album.title ?? "Album")
     }
 }

@@ -15,9 +15,7 @@ struct AlbumListViewRow: View {
         HStack(spacing: 8) {
             
             if let cover = album.cover {
-                AsyncImageView(url: "\(ImgurAPI.imageURL)\(cover).jpg")
-                    .frame(width: 100, height: 100)
-                    .clipped()
+                AsyncImageView(url: "\(ImgurAPI.imageURL)\(cover).jpg", cornerRadius: 8, width: 100, height: 100)
             } else {
                 NoImageView()
             }
