@@ -1,4 +1,4 @@
-This app allows the user to search a keywords to query image albums from the [imgur api](https://api.imgur.com/). 
+This app allows the user to search keywords to query image albums from the [imgur api](https://api.imgur.com/). 
 
 ![Simulator Screenshot - iPhone 15 - 2024-08-13 at 07 35 49](https://github.com/user-attachments/assets/ab612461-22f5-4fdb-9e12-6545d576be07) ![Simulator Screenshot - iPhone 15 - 2024-08-13 at 07 35 55](https://github.com/user-attachments/assets/65178d9a-1d9e-468d-877a-bba9608b25c4)
 
