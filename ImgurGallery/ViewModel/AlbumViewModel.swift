@@ -18,18 +18,21 @@ class AlbumViewModel: ObservableObject {
     
     private var searchCancellable: AnyCancellable?
     private var debounceDelay: TimeInterval = 0.5
-    
-    private let imgurClientId = Config.imgurClientId
-    
+    private let networkingClient = NetworkingClient()
+        
     init() {
         searchCancellable = $query
             .debounce(for: .seconds(debounceDelay), scheduler: DispatchQueue.main)
             .removeDuplicates()
             .sink { [weak self] newValue in
-                guard let self = self, !isLoading, !newValue.isEmpty, isTyping else {return}
-                Task {
-                    await self.fetchAlbums()
-                    self.isTyping = false // Mark typing as false after the search is triggered
+                guard let self = self else { return }
+                if newValue.isEmpty {
+                    self.albums = []
+                    self.errorMessage = nil
+                } else {
+                    Task {
+                        await self.fetchAlbums()
+                    }
                 }
             }
     }
@@ -41,27 +44,23 @@ class AlbumViewModel: ObservableObject {
             return
         }
         
-        print("fetching albums...")
         isLoading = true
         errorMessage = nil
         
         do {
-            guard let url = URL(string: ImgurAPI.baseURL + ImgurAPI.gallerySearch + "q_all=\(query)&" + "q_type=album") else { return }
+            guard let url = URL(string: ImgurAPI.baseURL + "gallery/search?q_all=\(query)&q_type=album") else { return }
             
-            var request = URLRequest(url: url)
-            request.addValue("Client-ID \(imgurClientId)", forHTTPHeaderField: "Authorization")
-
-            let (data, _) = try await URLSession.shared.data(for: request)
+            let headers = ["Authorization": "Client-ID " + Secrets.imgurClientId]
+            let data = try await networkingClient.fetchData(from: url, headers: headers)
             let response = try JSONDecoder().decode(ImgurResponse.self, from: data)
-            albums = response.data
+            albums = filterOutVideoContent(albums: response.data)
             
             if albums.isEmpty {
                 errorMessage = "No albums found."
             }
-            print("done fetching albums...")
         } catch {
-            errorMessage = "Failed to load albums. Please try again."
-            print("done fetching albums with error...")
+            print("\(error)")
+            errorMessage = "Failed to load albums. \(error.localizedDescription)"
         }
                 
         isLoading = false

@@ -9,7 +9,7 @@ import SwiftUI
 
 struct AlbumDetailView: View {
     let album: Album
-    
+        
     var body: some View {
         ScrollView {
             Text(album.title ?? "Album")
@@ -20,7 +20,7 @@ struct AlbumDetailView: View {
             LazyVGrid(columns: [GridItem(.adaptive(minimum: 100))], spacing: 10) {
                 ForEach(album.images ?? [], id: \.id) { image in
                     NavigationLink(destination: FullscreenImageView(image: image)) {
-                        AsyncImageView(url: image.link, width: 100, height: 100)
+                        AsyncImageView(url: image.link)
                     }
                 }
             }

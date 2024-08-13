@@ -11,15 +11,21 @@ import SwiftUI
 struct AsyncImageView: View {
     let url: String
     var cornerRadius: CGFloat = 0
-    var width: CGFloat? = nil
-    var height: CGFloat? = nil
+    var width: CGFloat = 100
+    var height: CGFloat = 100
+    var useProcessor: Bool = false // set to true when loading from lists for better optimization
+    
     var body: some View {
         KFImage(URL(string: url))
             .placeholder {
                 ProgressView()
             }
+            .setProcessor(useProcessor ? ResizingImageProcessor(referenceSize: CGSize(width: width * 2, height: height * 2), mode: .aspectFill) : DefaultImageProcessor()) 
+            .cancelOnDisappear(true)
+            .loadDiskFileSynchronously()
+            .cacheOriginalImage()
             .resizable()
-            .aspectRatio(contentMode: .fill)
+            .scaledToFill()
             .frame(width: width, height: height)
             .cornerRadius(cornerRadius)
             .clipped()

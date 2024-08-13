@@ -17,9 +17,10 @@ struct AlbumListView: View {
                     viewModel.isTyping = isTyping
                 })
                 
-                if viewModel.isLoading || (viewModel.isTyping && !viewModel.query.isEmpty) {
+                if viewModel.isLoading {
                     Spacer()
                     ProgressView()
+                        .scaleEffect(2)
                         .progressViewStyle(CircularProgressViewStyle())
                         .padding()
                     Spacer()
@@ -29,21 +30,21 @@ struct AlbumListView: View {
                         .font(.body)
                         .foregroundColor(.red)
                         .multilineTextAlignment(.center)
-                        .padding()
+                        .padding(.bottom, 50)
                     Spacer()
-                } else if viewModel.albums.isEmpty || viewModel.query.isEmpty {
+                } else if viewModel.query.isEmpty {
                     Spacer()
-                    Text(viewModel.query.isEmpty ? "Please enter a search term to find albums." : "No albums found")
+                    Text("Please enter a search term to find albums.")
                         .font(.body)
                         .foregroundColor(.gray)
                         .multilineTextAlignment(.center)
-                        .padding()
+                        .padding(.bottom, 50)
                     Spacer()
                 } else {
                     List {
                         ForEach(viewModel.albums) { album in
                             ZStack {
-                                AlbumListViewRow(album: album)
+                                AlbumListViewRow(album: album, viewModel: viewModel)
                                 NavigationLink(destination: AlbumDetailView(album: album)) {
                                     EmptyView()
                                 }.opacity(0)
@@ -57,9 +58,6 @@ struct AlbumListView: View {
                 }
             }
             .navigationTitle("Albums")
-            .background(Color(UIColor { traitCollection in
-                traitCollection.userInterfaceStyle == .dark ? UIColor.black : UIColor.white
-            }))
         }
     }
 }

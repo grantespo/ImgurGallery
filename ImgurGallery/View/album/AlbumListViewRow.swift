@@ -8,14 +8,14 @@
 import SwiftUI
 
 struct AlbumListViewRow: View {
-    @State private var isFavorite = false
     let album: Album
+    @ObservedObject var viewModel: AlbumViewModel
     
     var body: some View {
         HStack(spacing: 8) {
             
             if let cover = album.cover {
-                AsyncImageView(url: "\(ImgurAPI.imageURL)\(cover).jpg", cornerRadius: 8, width: 100, height: 100)
+                AsyncImageView(url: "\(ImgurAPI.imageURL)\(cover).jpg", cornerRadius: 8, useProcessor: true)
             } else {
                 NoImageView()
             }
@@ -35,20 +35,8 @@ struct AlbumListViewRow: View {
             
             Spacer()
             
-            Button(action: {
-                withAnimation(.easeInOut(duration: 0.15)) {
-                    isFavorite.toggle()
-                }
-                // TODO
-            }) {
-                Image(systemName: isFavorite ? "heart.fill" : "heart")
-                    .resizable()
-                    .foregroundColor(.red)
-                    .frame(width: 24, height: 24)
-                    .padding(.trailing, 8)
-            }
-            .buttonStyle(PlainButtonStyle())
-            .contentShape(Rectangle())
+            ViewsStack(views: album.views)
+            .padding(.trailing, 8)
         }
         .frame(maxWidth: .infinity, alignment: .leading)
         .padding(.vertical, 0)
