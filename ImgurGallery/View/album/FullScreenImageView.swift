@@ -79,7 +79,9 @@ struct FullscreenImageView: View {
                 ViewsStack(views: image.views)
                     .padding(.top, 5)
             }
-        }
+        }.background(
+            BackgroundGradient()
+        )
     }
     
     /// Adjusts the image offset to ensure it stays within the bounds of the screen.

@@ -20,6 +20,7 @@ struct Album: Decodable, Identifiable {
     let cover: String?
     var images: [ImageData]?
     var views: Int
+    var datetime: Int
 }
 
 /// The base model for an image.

@@ -45,7 +45,7 @@ struct AlbumListViewRow: View {
         .frame(height: 100)
         .background(
             Color(UIColor { traitCollection in
-                traitCollection.userInterfaceStyle == .dark ? UIColor.systemGray5 : UIColor.systemGray6
+                traitCollection.userInterfaceStyle == .dark ? UIColor.systemGray5 : UIColor.white
             })
             .cornerRadius(8)
         )

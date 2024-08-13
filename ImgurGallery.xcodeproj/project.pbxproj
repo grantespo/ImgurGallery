@@ -25,6 +25,7 @@
 		5F8AA3EF2C6AFF75001C6B92 /* NoImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8AA3EE2C6AFF75001C6B92 /* NoImageView.swift */; };
 		5F8AA3F82C6B40BC001C6B92 /* ViewsStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8AA3F72C6B40BC001C6B92 /* ViewsStack.swift */; };
 		5F8AA4022C6B5B17001C6B92 /* NetworkingClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8AA4012C6B5B16001C6B92 /* NetworkingClient.swift */; };
+		5F8AA4062C6B78C8001C6B92 /* BackgroundGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8AA4052C6B78C8001C6B92 /* BackgroundGradient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		5F8AA3EE2C6AFF75001C6B92 /* NoImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoImageView.swift; sourceTree = "<group>"; };
 		5F8AA3F72C6B40BC001C6B92 /* ViewsStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewsStack.swift; sourceTree = "<group>"; };
 		5F8AA4012C6B5B16001C6B92 /* NetworkingClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingClient.swift; sourceTree = "<group>"; };
+		5F8AA4052C6B78C8001C6B92 /* BackgroundGradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundGradient.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,6 +154,7 @@
 				5F8AA3EE2C6AFF75001C6B92 /* NoImageView.swift */,
 				5F8AA3E22C6AA47B001C6B92 /* SearchBarView.swift */,
 				5F8AA3F72C6B40BC001C6B92 /* ViewsStack.swift */,
+				5F8AA4052C6B78C8001C6B92 /* BackgroundGradient.swift */,
 			);
 			path = common;
 			sourceTree = "<group>";
@@ -255,6 +258,7 @@
 				5F8AA3D62C6A972E001C6B92 /* AlbumListView.swift in Sources */,
 				5F8AA3DE2C6A98B4001C6B92 /* constants.swift in Sources */,
 				5F8AA3EF2C6AFF75001C6B92 /* NoImageView.swift in Sources */,
+				5F8AA4062C6B78C8001C6B92 /* BackgroundGradient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

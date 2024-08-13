@@ -58,7 +58,9 @@ struct AlbumListView: View {
                     .listStyle(PlainListStyle())
                     .background(Color.clear)
                 }
-            }
+            }.background(
+                BackgroundGradient()
+            )
             .navigationTitle("Albums")
         }
     }
